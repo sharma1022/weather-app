@@ -15,9 +15,17 @@ function App() {
             <p className="weather__desc">Clouds</p>
           </div>
           <div className="weather__bottom">
-            <p className="weather__feels">27</p>
-            <p className="weather__humidity">20%</p>
-            <p className="weather__wind">12MPH</p>
+            <div className="weather__feels">
+              <p>27</p>
+              <p>FeelsLike</p>
+            </div>
+            <div className="weather__humidity">
+              <p>20%</p>
+              <p>Humidity</p>
+              </div>
+            <div className="weather__wind">
+              <p>12MPH</p>
+              <p>Wind</p></div>
           </div>
         </div>
       </div>
