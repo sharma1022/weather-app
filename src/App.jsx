@@ -1,21 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import axios from "axios";
 
 function App() {
+
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
-  
+
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=6d7e49e3ac86846731af17a9cb61014d`;
 
   const searchLocation = async (e) => {
-    if (e.key == "Enter") {
-      const { data } = await axios.get(url);
-      setData(data);
-      console.log(data);
-      setLocation("");
+    console.log("i'm here");
+
+    if ((e && e.key == "Enter")) {
+      console.log(location);
+      try{
+        const { data } = await axios.get(url);
+        setData(data);
+        console.log(data);
+        setLocation("");
+      }catch(e){
+        console.log(e);
+      }
+      
     }
   };
+  // useEffect(() => {
+  //   setLocation("Surrey");
+  // }, []);
+
   return (
     <div className="App">
       <div className="weather">
@@ -26,7 +39,7 @@ function App() {
             value={location}
             placeholder="Enter location"
             onChange={(e) => setLocation(e.target.value)}
-            onKeyPress={searchLocation}
+            onKeyUp={searchLocation}
           />
         </div>
         <div className="weather__container">

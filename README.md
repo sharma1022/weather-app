@@ -13,8 +13,8 @@ OpenWeather API is used for this app.
 
 ## Installation Steps
 
-- Clone this project `git clone https://github.com/ankurbag/react-jsx-demo-students.git`
-- Go to folder `cd react-jsx-demo-students`
+- Clone this project `git clone https://github.com/sharma1022/weather-app.git`
+- Go to folder `cd weather-app`
 - Run `npm install` or `npm i`
 - Run `npm start`
 - Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
